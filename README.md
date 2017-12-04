@@ -63,10 +63,10 @@ sonata_media:
 Autowiring: app/config/services.yml
 
 ```yaml
-	
-	[...]
 
-	MediaBundle\:
+    [...]
+
+    MediaBundle\:
         resource: '../../src/MediaBundle/*'
         # you can exclude directories or files
         # but if a service is unused, it's removed anyway
@@ -74,7 +74,7 @@ Autowiring: app/config/services.yml
 
     # controllers are imported separately to make sure they're public
     # and have a tag that allows actions to type-hint services
-    
+
     [...]
 
     MediaBundle\Action\:
