@@ -1,0 +1,12 @@
+{% extends 'SonataAdminBundle:CRUD:base_show_field.html.twig' %}
+
+{% block field %}
+    {% if value and (value.providerName == 'sonata.media.provider.image') %}
+        {% media  value, 'reference' with {'class': 'img-responsive img-rounded', 'style': 'max-width: 800px;'} %} <br />
+    {% endif %}
+    {% if field_description.hasAssociationAdmin and field_description.associationadmin.id(value) and field_description.associationadmin.isGranted('EDIT') and field_description.associationadmin.hasRoute('edit') %}
+        <a href="{{ field_description.associationadmin.generateObjectUrl(field_description.options.route.name, value, field_description.options.route.parameters) }}">{{ value|render_relation_element(field_description) }}</a>
+    {% else %}
+        {{ value|render_relation_element(field_description) }}
+    {% endif %}
+{% endblock %}

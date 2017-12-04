@@ -1,0 +1,10 @@
+definitions:
+    Media-dto:
+        type: "object"
+        description: "Upload Media"
+        properties:
+            fileName:
+                type: string
+            data:
+                description: "base64Content"
+                type: string
